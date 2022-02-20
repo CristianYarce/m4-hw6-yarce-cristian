@@ -32,7 +32,19 @@ function getPizzaOrder() {
   // if no toppings are given, make sure pizza.toppings is set to []
   // if the user has added toppings, add toppingsFee multiplied by
   // the number of toppings added to pizza.cost
-  // YOUR CODE HERE
+  toppings = toppings.split(',');
+  pizza.topping = [];
+
+  toppingsNum = toppings.length;
+  if (topping == "") toppingsNum = 0;
+
+  for(let x=0; x<ToppingsNum; x++){
+    pizza.toppings.push(toppings[x].trim());
+  }
+
+  ToppingsCost = toppingsFee * ToppingsNum;
+
+  pizza.cost += ToppingsCost;
 
   var extraCheese = confirm("Would you like extra cheese?")
   // HINT: confirm() returns a boolean
