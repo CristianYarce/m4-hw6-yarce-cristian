@@ -23,7 +23,7 @@ function getPizzaOrder() {
   // to pizza.cost
   crust = crust.toLocaleLowerCase().trim();
 
-  if (crust == 'thick') pizza += thickCrustUpcharge;
+  if (crust == 'thick') pizza.cost += thickCrustUpcharge;
   pizza.crust = crust;
 
   var toppings = prompt("Please enter additional toppings (comma separated)")
@@ -59,8 +59,12 @@ function getPizzaOrder() {
   // if order is for delivery, set pizza.saleType to "delivery"
   // if order is NOT for delivery, set pizza.saleType to "take-out"
   // if order if for delivery, add deliveryFee to pizza.cost
-  // YOUR CODE HERE
+  pizza.saleType = 'take-out';
 
+  if (isDelivery) {
+    pizza.saleType = "delivery";
+    pizza.cost += deliveryFee;
+  }
   return pizza
 }
 
