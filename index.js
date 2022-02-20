@@ -50,7 +50,9 @@ function getPizzaOrder() {
   // HINT: confirm() returns a boolean
   // if the user specifies extra cheese, set pizza.extraCheese to true or false
   // if the user specifies extra cheese, add extraCheeseUpcharge to pizza.cost
-  // YOUR CODE HERE
+  pizza.extraCheese = extraCheese;
+
+  if (extraCheese) pizza.cost += extraCheeseUpcharge;
 
   var isDelivery = confirm("Is your order for Delivery?")
   // HINT: confirm() returns a boolean
