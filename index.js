@@ -10,7 +10,7 @@ function getPizzaOrder() {
   alert("Hi, Thanks for ordering with Web to Pizza!")
   var pizza = {
     // set the 'cost' property to the basePrice
-    cost : basePrice,
+    cost: basePrice
   }
 
   var crust = prompt(
@@ -33,11 +33,11 @@ function getPizzaOrder() {
   // if the user has added toppings, add toppingsFee multiplied by
   // the number of toppings added to pizza.cost
   toppings = toppings.split(',');
-  pizza.topping = [];
+  pizza.toppings = [];
 
-  toppingsNum = toppings.length;
-  if (topping == "") toppingsNum = 0;
-
+  ToppingsNum = toppings.length;
+  if(toppings == "") ToppingsNum = 0;
+  
   for(let x=0; x<ToppingsNum; x++){
     pizza.toppings.push(toppings[x].trim());
   }
@@ -45,6 +45,7 @@ function getPizzaOrder() {
   ToppingsCost = toppingsFee * ToppingsNum;
 
   pizza.cost += ToppingsCost;
+
 
   var extraCheese = confirm("Would you like extra cheese?")
   // HINT: confirm() returns a boolean
